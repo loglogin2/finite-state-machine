@@ -13,7 +13,7 @@ class FSM {
         this._states[this._state].initial = true;
         this._history = [this._state];
         this._pointer = 0;
-        this._canRedo = false;
+       // this._canRedo = false;
     }
 
     /**
@@ -33,7 +33,7 @@ class FSM {
             this._state = state;
             this._history.push(state);
             this._pointer++;
-            this._canRedo = false;
+          // this._canRedo = false;
         }
         else throw new Error("State is not found");
     }
@@ -52,7 +52,7 @@ class FSM {
                     this._state = this._states[a].transitions[event];
                     this._history.push(this._state);
                     this._pointer ++;
-                    this._canRedo = false;
+                    //this._canRedo = false;
                     return;
                 }
         }
@@ -67,7 +67,7 @@ class FSM {
     reset() {
 
         this._state = this._history[0];
-        this._canRedo = false;
+       // this._canRedo = false;
         this._pointer=0;
 
 
